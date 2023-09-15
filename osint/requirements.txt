@@ -1,0 +1,11 @@
+Scrapy==2.10.1
+Scrapy-Redis-BloomFilter==0.8.1
+scrapy-selenium==0.0.7
+selenium==4.9.0
+minio==7.1.16
+pyOpenSSL==22.0.0
+cryptography==38.0.4
+kafka-python==2.0.2
+Twisted==22.10.0
+scrapyd==1.4.2
+gerapy==0.9.13
