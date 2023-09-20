@@ -46,6 +46,8 @@ SELENIUM_DRIVER_ARGUMENTS = ['--disable-dev-shm-usage',
                              '--log-level=0',
                              '--window-size=1920,1080',
                              # '--headless',
+                             '--disable-infobars',
+
                              ]
 SELENIUM_MIN_DRIVERS = 5
 SELENIUM_MAX_DRIVERS = 10

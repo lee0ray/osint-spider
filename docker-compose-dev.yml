@@ -25,4 +25,4 @@ services:
   redis:
     image: redislabs/rebloom
     ports:
-      - "6379":"6379"
+      - "6379:6379"
