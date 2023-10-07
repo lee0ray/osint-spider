@@ -63,7 +63,7 @@ class FortinetSpider(scrapy.Spider):
             item['extract'] = {}
             item['extract']['publish_time'] = publish_time
             item['extract']['authors'] = authors
-            
+
             yield SeleniumRequest(url=source_url, wait_time=5, callback=self.parse_content, meta={'item': item})
 
     def parse_content(self,  response: scrapy.http.Response):
