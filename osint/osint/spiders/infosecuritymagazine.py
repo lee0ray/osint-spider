@@ -23,10 +23,10 @@ class InfosecurityMagazineSpider(scrapy.Spider):
             
             title = post.xpath('h2/a/text()').extract_first()
             abstract = post.xpath('p/text()').extract_first()
-            tags = ['']
+            tags = []
             source = self.name
             publish_time = post.xpath('span/time/text()').extract_first()
-            authors =['']
+            authors =[]
             item = OsintItem()
             item['title'] = title
             item['abstract'] = abstract

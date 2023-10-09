@@ -27,7 +27,7 @@ class FortinetSpider(scrapy.Spider):
             source_url = response.urljoin(_source_url)
             title = post.xpath('div[1]/div[2]/h2/a/text()').extract_first()
             abstract = post.xpath('div[1]/div[2]/p[2]/text()').extract_first()
-            tags = ['']
+            tags = []
             source = self.name
             publish_time = post.xpath('div[2]/div[2]/p/span[2]/text()').extract_first()
             authors = [i.strip() for i in post.xpath('div[2]/div[2]/p/span[1]/a/text()').extract()]
@@ -50,7 +50,7 @@ class FortinetSpider(scrapy.Spider):
             source_url = response.urljoin(_source_url)
             title = post.xpath('div[1]/div[2]/h2/a/text()').extract_first()
             abstract = post.xpath('div[1]/div[2]/p[2]/text()').extract_first()
-            tags = ['']
+            tags = []
             source = self.name
             publish_time = post.xpath('div[2]/div[2]/p/span[2]/text()').extract_first()
             authors = [i.strip() for i in post.xpath('div[2]/div[2]/p/span[1]/a/text()').extract()]
