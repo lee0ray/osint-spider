@@ -22,7 +22,7 @@ class OsintPipeline:
                                       sasl_plain_password=KAFKA_PASSWORD,
                                       security_protocol='SASL_PLAINTEXT',
                                       linger_ms=1000,
-                                      api_version=(0, 9, 0))
+                                      )
 
     def close_spider(self, spider):
         self.producer.close()
