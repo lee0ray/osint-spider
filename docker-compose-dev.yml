@@ -24,5 +24,6 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
   redis:
     image: redislabs/rebloom
+    container_name: redis
     ports:
       - "6379:6379"

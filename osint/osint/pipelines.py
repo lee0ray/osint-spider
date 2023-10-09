@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from kafka import KafkaProducer
-from .settings import KAFKA_CONNECTION_PARAMETERS
+from .settings import KAFKA_CONNECTION_PARAMETERS, KAFKA_USERNAME, KAFKA_PASSWORD
 import json
 
 
@@ -17,6 +17,10 @@ class OsintPipeline:
 
     def open_spider(self, spider):
         self.producer = KafkaProducer(bootstrap_servers=[KAFKA_CONNECTION_PARAMETERS], batch_size=500,
+                                      sasl_mechanism='PLAIN',
+                                      sasl_plain_username=KAFKA_USERNAME,
+                                      sasl_plain_password=KAFKA_PASSWORD,
+                                      security_protocol='SASL_PLAINTEXT',
                                       linger_ms=1000,
                                       api_version=(0, 9, 0))
 

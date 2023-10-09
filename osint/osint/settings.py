@@ -16,7 +16,9 @@ NEWSPIDER_MODULE = "osint.spiders"
 
 # SCHEDULER = "scrapy_distributed.schedulers.DistributedScheduler"
 # SCHEDULER_QUEUE_CLASS = "scrapy_distributed.queues.kafka.KafkaQueue"
-KAFKA_CONNECTION_PARAMETERS = "localhost:9092"
+KAFKA_CONNECTION_PARAMETERS = "111.202.72.197:39092"
+KAFKA_USERNAME = 'kafAdmin'
+KAFKA_PASSWORD = 'A?5#Pkn3Smudnicn'
 # DUPEFILTER_CLASS = "scrapy_redis_bloomfilter.dupefilter.RFPDupeFilter"
 # BLOOM_DUPEFILTER_REDIS_URL = "redis://:@localhost:6379/0"
 # BLOOM_DUPEFILTER_REDIS_HOST = "localhost"
@@ -25,7 +27,7 @@ KAFKA_CONNECTION_PARAMETERS = "localhost:9092"
 # BLOOM_DUPEFILTER_ERROR_RATE = 0.001
 # BLOOM_DUPEFILTER_CAPACITY = 100_0000
 DUPEFILTER_CLASS = "scrapy_redis_bloomfilter.dupefilter.RFPDupeFilter"
-REDIS_URL = 'redis://127.0.0.1:6379'
+REDIS_URL = 'redis://redis:6379'
 
 # Number of Hash Functions to use, defaults to 6
 BLOOMFILTER_HASH_NUMBER = 6
@@ -45,9 +47,8 @@ SELENIUM_DRIVER_ARGUMENTS = ['--disable-dev-shm-usage',
                              # '--single-process',
                              '--log-level=0',
                              '--window-size=1920,1080',
-                             # '--headless',
+                             '--headless',
                              '--disable-infobars',
-
                              ]
 SELENIUM_MIN_DRIVERS = 5
 SELENIUM_MAX_DRIVERS = 10
@@ -134,8 +135,8 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
-OSS_ENDPOINT_PATH = '172.22.50.165:9000'
-OSS_ACCESS_KEY = '1p39rJJ31rPiVMgl'
-OSS_SECRET_KEY = '3x5SBg1iygjTnQ5UopB85W0k8t67a924'
+OSS_ENDPOINT_PATH = 'minio:9000'
+OSS_ACCESS_KEY = 'DJQYbEOzgwu1s45BGfxH'
+OSS_SECRET_KEY = 'l06tZxXDz81mVGtTUVSkqaWWcRMWzFTOaiwmHMMy'
 OSS_BUCKET = 'osint-spider'
 OSS_ARGS = {'secure': False}
