@@ -16,17 +16,19 @@ class OsintPipeline:
         self.producer = None
 
     def open_spider(self, spider):
-        self.producer = KafkaProducer(bootstrap_servers=[KAFKA_CONNECTION_PARAMETERS], batch_size=500,
-                                      sasl_mechanism='PLAIN',
-                                      sasl_plain_username=KAFKA_USERNAME,
-                                      sasl_plain_password=KAFKA_PASSWORD,
-                                      security_protocol='SASL_PLAINTEXT',
-                                      linger_ms=1000,
-                                      )
+        # self.producer = KafkaProducer(bootstrap_servers=[KAFKA_CONNECTION_PARAMETERS], batch_size=500,
+        #                               sasl_mechanism='PLAIN',
+        #                               sasl_plain_username=KAFKA_USERNAME,
+        #                               sasl_plain_password=KAFKA_PASSWORD,
+        #                               security_protocol='SASL_PLAINTEXT',
+        #                               linger_ms=1000,
+        #                               )
+        return
 
     def close_spider(self, spider):
-        self.producer.close()
+        # self.producer.close()
+        return
 
     def process_item(self, item, spider):
-        self.producer.send('lt.ti.osint', key=None, value=json.dumps(dict(item)).encode('utf-8'))
+        # self.producer.send('lt.ti.osint', key=None, value=json.dumps(dict(item)).encode('utf-8'))
         return item
